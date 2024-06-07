@@ -9,8 +9,8 @@ This is the **official repository** for the [**paper**]([https://arxiv.org/abs/2
 The following commands will create a local Anaconda environment with the necessary packages installed.
 
 ```bash
-conda create -n clip4cir -y python=3.8
-conda activate clip4cir
+conda create -n cala -y python=3.8
+conda activate cala
 conda install -y -c pytorch pytorch=1.11.0 torchvision=0.12.0
 conda install -y -c anaconda pandas=1.4.2
 pip install comet-ml==3.21.0
