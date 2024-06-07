@@ -139,18 +139,18 @@ class FashionIQDataset(Dataset):
         # get triplets made by (reference_image, target_image, a pair of relative captions)
         self.triplets: List[dict] = []
         for dress_type in dress_types:
-            with open(base_path / 'fashionIQ' / 'captions' / f'cap.{dress_type}.{split}.json') as f:
+            with open(base_path / 'fashionIQ_dataset' / 'captions' / f'cap.{dress_type}.{split}.json') as f:
                 self.triplets.extend(json.load(f))
 
         # get the image names
         self.image_names: list = []
         for dress_type in dress_types:
-            with open(base_path / 'fashionIQ' / 'image_splits' / f'split.{dress_type}.{split}.json') as f:
+            with open(base_path / 'fashionIQ_dataset' / 'image_splits' / f'split.{dress_type}.{split}.json') as f:
                 self.image_names.extend(json.load(f))
 
         print(f"FashionIQ {split} - {dress_types} dataset in {mode} mode initialized")
         for image_name in self.image_names[:]:
-            file_path = base_path / 'fashionIQ' / 'image_data' / f"{image_name}.jpg"
+            file_path = base_path / 'fashionIQ_dataset' / 'image_data' / f"{image_name}.jpg"
             
             # 使用 Path.exists() 方法检查文件是否存在
             if not file_path.exists():
@@ -164,27 +164,27 @@ class FashionIQDataset(Dataset):
                 reference_name = self.triplets[index]['candidate'].replace(".jpg", "")
 
                 if self.split == 'train':
-                    reference_image_path = base_path / 'fashionIQ' / 'image_data' / f"{reference_name}.jpg"
+                    reference_image_path = base_path / 'fashionIQ_dataset' / 'image_data' / f"{reference_name}.jpg"
                     reference_image = self.preprocess(PIL.Image.open(reference_image_path).convert("RGB"))
                     target_name = self.triplets[index]['target'].replace(".jpg", "")
-                    target_image_path = base_path / 'fashionIQ' / 'image_data' / f"{target_name}.jpg"
+                    target_image_path = base_path / 'fashionIQ_dataset' / 'image_data' / f"{target_name}.jpg"
                     target_image = self.preprocess(PIL.Image.open(target_image_path).convert("RGB"))
                     return reference_image, target_image, image_captions
 
                 elif self.split == 'val':
-                    reference_image_path = base_path / 'fashionIQ' / 'image_data' / f"{reference_name}.jpg"
+                    reference_image_path = base_path / 'fashionIQ_dataset' / 'image_data' / f"{reference_name}.jpg"
                     reference_image = self.preprocess(PIL.Image.open(reference_image_path).convert("RGB"))
                     target_name = self.triplets[index]['target'].replace(".jpg", "")
                     return reference_image, reference_name, target_name, image_captions
                 
                 elif self.split == 'test':
-                    reference_image_path = base_path / 'fashionIQ' / 'image_data' / f"{reference_name}.jpg"
+                    reference_image_path = base_path / 'fashionIQ_dataset' / 'image_data' / f"{reference_name}.jpg"
                     reference_image = self.preprocess(PIL.Image.open(reference_image_path).convert("RGB"))
                     return reference_name, reference_image, image_captions
 
             elif self.mode == 'classic':
                 image_name = self.image_names[index]
-                image_path = base_path / 'fashionIQ' / 'image_data' / f"{image_name}.jpg"
+                image_path = base_path / 'fashionIQ_dataset' / 'image_data' / f"{image_name}.jpg"
                 image = self.preprocess(PIL.Image.open(image_path).convert("RGB"))
                 return image_name, image
 
