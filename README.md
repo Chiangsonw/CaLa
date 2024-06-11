@@ -1,7 +1,7 @@
 # CaLa (SIGIR 2024)
 
 ### CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval
-[![PWC]]([https://paperswithcode.com/sota/nlp-based-person-retrival-on-cuhk-pedes?p=towards-unified-text-based-person-retrieval-a](https://paperswithcode.com/paper/cala-complementary-association-learning-for))
+[Paper with Code](https://paperswithcode.com/paper/cala-complementary-association-learning-for)
 
 This is the **official repository** for the [**paper**]([https://arxiv.org/abs/2308.11485]) "*CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval*".
 
