@@ -1,7 +1,7 @@
 # CaLa (SIGIR 2024)
 
 ### CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval
-[Paper with Code](https://paperswithcode.com/paper/cala-complementary-association-learning-for)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cala-complementary-association-learning-for/image-retrieval-on-cirr)](https://paperswithcode.com/sota/image-retrieval-on-cirr?p=cala-complementary-association-learning-for)
 
 This is the **official repository** for the [**paper**]([https://arxiv.org/abs/2308.11485]) "*CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval*".
 
