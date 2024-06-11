@@ -90,23 +90,75 @@ project_base_path
                 | split.rc2.val.json
 ```
 
+
+# Adjustments for dependencies
+
+For finetuning blip2 encoderds, you need to comment out this code in lavis within your conda enviroment.
+```python
+# In lavis/models/blip2_models/blip2_qformer.py line 367
+# @torch.no_grad() # commemt out this line.
+```
+Comment out this code to calculate the gradient of the blip2-model to update the parameters.
+
+For finetuning clip encoders, you need to replace with these codes in the clip packages, thus RN50x4 features can interact with Qformers.
+```python
+# Replace CLIP/clip/models.py line 152-154 with the following codes.
+152#    x = self.attnpool(x)
+153#	
+154#    return x
+
+152#	y=x 
+153#	x = self.attepool(x)
+154#
+155#	return x,y
+
+```
+
 ### Training
 
 
-```sh
-
+```shell
+# cala finetune 
+CUDA_VISIBLE_DEVICES='GPU_IDs' python src/blip_fine_tune.py --dataset {'CIRR' or 'FashionIQ'} \
+	--num-epochs 30 --batch-size 64 \
+	--max-epoch 15 --min-lr 0 \
+	--learning-rate 5e-6 \
+	--transform targetpad --target-ratio 1.25 \
+	--save-training --save-best --validation-frequency 1 \
+	--encoder {'both' or 'text' or 'multi'} \
+	--encoder-arch {clip or blip2} \
+	--cir-frame {sum or artemis} \
+	--tac-weight 0.45 \
+	--hca-weight 0.1 \
+	--embeds-dim {640 for clip and 768 for blip2} \
+	--model-name {RN50x4 for clip and None for blip} \
+	--api-key {Comet-api-key} \
+	--workspace {Comet-workspace} \
+	--experiment-name {Comet-experiment-name} \
 ```
 
-### Evaluation
-
-
-```sh
-
-```
 
 ### CIRR Testing
 
 
-```sh
+```shell
+CUDA_VISIBLE_DEVICES='GPU_IDs' python src/cirr_test_submission_blip2.py --submission-name {cirr_submission} \
+	--combining-function {sum or artemis} \
+	--blip2-textual-path {saved_blip2_textual.pt} \
+	--blip2-multimodal-path {saved_blip2_multimodal.pt} \
+	--blip2-visual-path {saved_blip2_visual.pt} 
 
+```
+
+```shell
+python src/validate.py 
+   	--dataset {'CIRR' or 'FashionIQ'} \
+   	--combining-function {'combiner' or 'sum'} \
+   	--combiner-path {path to trained Combiner} \
+   	--projection-dim 2560 \
+	--hidden-dim 5120 \
+   	--clip-model-name RN50x4 \
+   	--clip-model-path {path-to-fine-tuned-CLIP} \
+   	--target-ratio 1.25 \
+   	--transform targetpad
 ```
