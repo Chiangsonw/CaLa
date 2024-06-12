@@ -164,3 +164,16 @@ python src/validate.py
    	--target-ratio 1.25 \
    	--transform targetpad
 ```
+
+
+## Reference
+If you use CaLa in your research, please cite it by the following BibTeX entry:
+
+```bibtex
+@article{jiang2024cala,
+  title={CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval},
+  author={Jiang, Xintong and Wang, Yaxiong and Li, Mengjian and Wu, Yujiao and Hu, Bingwen and Qian, Xueming},
+  journal={arXiv preprint arXiv:2405.19149},
+  year={2024}
+}
+```
