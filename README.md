@@ -1,10 +1,11 @@
-# CaLa (SIGIR 2024)
+# CaLa
 
 ### CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cala-complementary-association-learning-for/image-retrieval-on-cirr)](https://paperswithcode.com/sota/image-retrieval-on-cirr?p=cala-complementary-association-learning-for)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cala-complementary-association-learning-for/image-retrieval-on-fashion-iq)](https://paperswithcode.com/sota/image-retrieval-on-fashion-iq?p=cala-complementary-association-learning-for)
 
-This is the **official repository** for the [**paper**]([https://arxiv.org/abs/2308.11485]) "*CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval*".
+**CaLa(ACM SIGIR 2024)** is a new composed image retrieval framework, considering two complementary associations in the task. As the name implies, CaLa presents TBIA(text-based image alignment) and CTR(complementary text reasoning) for augmenting composed image retrieval.
+
 
 ### Prerequisites
 	
