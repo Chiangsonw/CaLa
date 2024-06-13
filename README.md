@@ -14,7 +14,7 @@ We highlight the contributions of this paper as follows:
 
 • Competitive Performance on CIRR and FashionIQ benchmarks. CaLa can benefit several baselines with different backbones and architectures, revealing it is a widely beneficial module for composed image retrieval.
 
-More details can be found at our paper: [CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval]([https://arxiv.org/abs/2306.02898](https://arxiv.org/pdf/2405.19149))
+More details can be found at our paper: [CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval](https://arxiv.org/pdf/2405.19149)
 
 ### Prerequisites
 	
