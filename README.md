@@ -6,6 +6,15 @@
 
 **CaLa(ACM SIGIR 2024)** is a new composed image retrieval framework, considering two complementary associations in the task. As the name implies, CaLa presents TBIA(text-based image alignment) and CTR(complementary text reasoning) for augmenting composed image retrieval.
 
+We highlight the contributions of this paper as follows:
+
+• We present a new thinking of composed image retrieval,the annotated triplet is viewed as a graph node, and two complementary association clues are disclosed to enhance the composed image retrieval.
+
+• A hinge-based attention and twin-attention-based visual compositor are proposed to effectively impose the new associations into the network learning.
+
+• Competitive Performance on CIRR and FashionIQ benchmarks. CaLa can benefit several baselines with different backbones and architectures, revealing it is a widely beneficial module for composed image retrieval.
+
+More details can be found at our paper: [CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval]([https://arxiv.org/abs/2306.02898](https://arxiv.org/pdf/2405.19149))
 
 ### Prerequisites
 	
