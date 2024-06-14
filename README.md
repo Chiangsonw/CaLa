@@ -195,3 +195,6 @@ If you use CaLa in your research, please cite it by the following BibTeX entry:
   year={2024}
 }
 ```
+
+## Acknowledgement
+Our implementation is based on [CLIP4Cir](https://github.com/ABaldrati/CLIP4Cir) and [LAVIS](https://github.com/salesforce/LAVIS).
