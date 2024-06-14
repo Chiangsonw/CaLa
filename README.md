@@ -111,7 +111,7 @@ project_base_path
 ```
 
 
-# Adjustments for dependencies
+### Adjustments for dependencies
 
 For finetuning blip2 encoderds, you need to comment out this code in lavis within your conda enviroment.
 ```python
