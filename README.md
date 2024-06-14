@@ -19,6 +19,9 @@ More details can be found at our paper: [CaLa: Complementary Association Learnin
 This is the workflow of our CaLa framework.
 <div align="center"><img src="assets/cala_workflow.jpg" width="900"></div>
 
+## News
+
+## Models and Weights
 
 ### Prerequisites
 	
