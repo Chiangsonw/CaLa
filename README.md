@@ -16,6 +16,8 @@ We highlight the contributions of this paper as follows:
 
 More details can be found at our paper: [CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval](https://arxiv.org/pdf/2405.19149)
 
+This is the workflow of our CaLa framework.
+
 ### Prerequisites
 	
 The following commands will create a local Anaconda environment with the necessary packages installed.
