@@ -402,7 +402,8 @@ def blip_finetune_fiq(train_dress_types: List[str], val_dress_types: List[str],
                     if hca_weight > 0:
                         reasoning_loss = crossentropy_criterion(reasoning_logits, ground_truth)
                         loss = hca_weight * reasoning_loss + (1 - hca_weight) * contrastive_loss
-                    loss = contrastive_loss
+                    else:
+                        loss = contrastive_loss
 
                 # Backpropagate and update the weights
                 scaler.scale(loss).backward()
@@ -871,7 +872,8 @@ def blip_finetune_cirr(num_epochs: int, batch_size: int,
                     if hca_weight > 0:
                         reasoning_loss = crossentropy_criterion(reasoning_logits, ground_truth)
                         loss = hca_weight * reasoning_loss + (1 - hca_weight) * contrastive_loss
-                    loss = contrastive_loss
+                    else:
+                        loss = contrastive_loss
 
                 # Backpropagate and update the weights
                 scaler.scale(loss).backward()      
