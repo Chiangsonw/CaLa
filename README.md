@@ -132,6 +132,20 @@ For finetuning clip encoders, you need to replace with these codes in the clip p
 154#
 155#	return x,y
 
+# Replace CLIP/clip/models.py line 343-356 with the following codes. Before get the cls token, get the feature sequence of text as text global features.
+ 346#   x = x + self.positional_embedding.type(self.dtype)
+ 347#   x = x.permute(1, 0, 2)  # NLD -> LND
+ 348#   x = self.transformer(x)
+ 349#   x = x.permute(1, 0, 2)  # LND -> NLD
+ 350#   x = self.ln_final(x).type(self.dtype)
+ 351#
+ 352#   y = x
+ 353#   # x.shape = [batch_size, n_ctx, transformer.width]
+ 354#   # take features from the eot embedding (eot_token is the highest number in each sequence)
+ 355#   x = x[torch.arange(x.shape[0]), text.argmax(dim=-1)] @ self.text_projection
+
+ 356#   return x,y
+
 ```
 
 ### Training
