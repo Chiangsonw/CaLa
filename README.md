@@ -128,7 +128,7 @@ For finetuning clip encoders, you need to replace with these codes in the clip p
 154#    return x
 
 152#	y=x 
-153#	x = self.attepool(x)
+153#	x = self.attnpool(x)
 154#
 155#	return x,y
 
